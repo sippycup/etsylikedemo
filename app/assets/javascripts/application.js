@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= reguire bootstrap
+//= reguire bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+

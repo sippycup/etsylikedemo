@@ -33,19 +33,6 @@ body {
 	clear: left;
 }
 
-.col-md-8 {
-
-	h3 {
-		font-size: 45px;
-	}
-	h5 {
-		font-size: 25px;
-	}
-	p {
-		font-size: 18px;
-	}
-}
-
 .caption {
 	h3 {
 		font-size: 17px;
@@ -58,9 +45,27 @@ body {
 }
 
 .jumbotron {
-	background-image: url('https://dl.dropboxusercontent.com/s/gmfijf4qoxsyl0g/jumbotron_sunset.jpg?dl=0');
-	h1, h2 {
+	background-image: url('https://dl.dropboxusercontent.com/s/qvc0qw7usa9h5m6/bannerpottery.jpg?dl=0');
+	h1 {
+		margin: 0;
 		font-family: guardian-egyptt, georgia, serif;
+		color: white;
+		font-size: 42px;
+   		font-weight: 500;
+    	line-height: 1.3em;
+    	width: 580px;
 	}
+	h2 {
+		font-family: guardian-egyptt, georgia, serif;
+		color: white;
+		font-size: 30px;
+   		font-weight: 500;
+    	line-height: 1.3em;
+    	width: 580px;
+	}
+}
+
+.thumbnail {
+	height: 370px;
 }
 

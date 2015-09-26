@@ -40,13 +40,13 @@ class OrdersController < ApplicationController
     rescue Stripe::CardError => e
       flash[:danger] = e.message
     end
-
+    
     respond_to do |format|
       if @order.save
         format.html { redirect_to root_url }
-        format.json { render :show, status: :created, location: @order }
+        format.json { render action: 'show', status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -63,3 +63,5 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:address, :city, :state)
     end
 end
+
+

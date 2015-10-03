@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def purchases
-    @orders = Order.all.where(buyer: current_user).order('created_at DESC')
+    @orders = Order.all.where(buyer: current_user).order("created_at DESC")
   end
 
   # GET /orders/new
@@ -40,7 +40,13 @@ class OrdersController < ApplicationController
     rescue Stripe::CardError => e
       flash[:danger] = e.message
     end
-    
+
+    transfer = Stripe::Transfer.create(
+      :amount => (@listing.price * 95).floor,
+      :currency => "usd",
+      :recipient => @seller.recipient
+      )
+
     respond_to do |format|
       if @order.save
         format.html { redirect_to root_url }
@@ -63,5 +69,3 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:address, :city, :state)
     end
 end
-
-

@@ -1,6 +1,6 @@
+source 'https://code.stripe.com'
 source 'https://rubygems.org'
 ruby "2.2.1"
-
 
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
@@ -15,16 +15,17 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 gem 'devise'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-group :development, :test do
-	gem 'sqlite3'
-	gem 'byebug'
-	gem 'web-console', '~> 2.0'
-	gem 'spring'
-end
+gem 'sprockets', '~> 3.0'
 
 group :production do
 	gem 'pg' 
 	gem 'rails_12factor'
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :doc do
+	gem 'sdoc', require: false
 end
